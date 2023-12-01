@@ -1,0 +1,3 @@
+[submodule "aocd_data"]
+	path = aocd_data
+	url = git@github.com:paulsuh/AdventOfCode-2023-Private.git
