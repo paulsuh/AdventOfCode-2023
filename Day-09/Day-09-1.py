@@ -17,7 +17,7 @@ def _setup() -> tuple[Puzzle, str]:
     return puzzle, args.example
 
 
-def parse_input(input_string: str) -> tuple[str, dict]:
+def parse_input(input_string: str) -> list[list[int]]:
     return [
         [
             int(element)
