@@ -31,7 +31,7 @@ def parse_input(input_string: str) -> list[str]:
     return input_list
 
 
-def hash(input_step: str) -> int:
+def aoc_hash(input_step: str) -> int:
     return reduce(
         lambda acc, next_char: ((acc+ord(next_char))*17) % 256,
         input_step,
@@ -45,13 +45,13 @@ def _solve(input_string: str) -> int:
     for one_step in input_list:
         if one_step[-2] == "=":
             label = one_step[0:-2]
-            box_num = hash(label)
+            box_num = aoc_hash(label)
             lens_power = one_step[-1]
             box = lens_boxes[box_num]
             box[label] = lens_power
         else:
             label = one_step[0:-1]
-            box_num = hash(label)
+            box_num = aoc_hash(label)
             box = lens_boxes[box_num]
             if label in box:
                 del box[label]

@@ -30,7 +30,7 @@ def parse_input(input_string: str) -> list[str]:
     return input_list
 
 
-def hash(input_step: str) -> int:
+def aoc_hash(input_step: str) -> int:
     return reduce(
         lambda acc, next_char: ((acc+ord(next_char))*17) % 256,
         input_step,
@@ -41,8 +41,8 @@ def hash(input_step: str) -> int:
 def _solve(input_string: str) -> int:
     input_list = parse_input(input_string)
     for step in input_list:
-        print(step, hash(step))
-    return sum([hash(step) for step in input_list])
+        print(step, aoc_hash(step))
+    return sum([aoc_hash(step) for step in input_list])
 
 
 def _main():
